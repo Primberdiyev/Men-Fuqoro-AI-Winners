@@ -12,6 +12,7 @@ class AppTexts {
   static const stepInto =
       'Kelajangizni MenFuqoqo AI ilovasi bilan yanada yahshilang';
   static const menFuqoroAI = 'Men Fuqoro AI';
+  static const typeMessage = 'So\'rov matnini kiriting';
   static const home = 'Home';
   static const introduceLawyer = 'Advokatlar\nhaqida';
   static const doTask = 'Mashq\nbajarish';

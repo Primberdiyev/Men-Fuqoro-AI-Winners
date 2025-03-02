@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/home_page_top.dart';
+import 'package:men_fuqoro_ai/features/routes/route_names.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
 import 'package:men_fuqoro_ai/features/utils/app_images.dart';
 import 'package:men_fuqoro_ai/features/utils/app_text_styles.dart';
@@ -96,7 +97,9 @@ class HomePage extends StatelessWidget {
         child: FloatingActionButton(
           backgroundColor: AppColors.mainColor,
           shape: CircleBorder(),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.chat);
+          },
           child: Text(
             '+',
             style: TextStyle(

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819099465287",
+    "project_id": "men-fuqoro-ai",
+    "storage_bucket": "men-fuqoro-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819099465287:android:3befa0f83f245b5864a362",
+        "android_client_info": {
+          "package_name": "com.example.men_fuqoro_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCdIEPA22tyi5SJUf09lMtqi3xPnrl1ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
