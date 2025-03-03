@@ -3,7 +3,7 @@ import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
 List<LawModel> laws = [
   LawModel(
       lawName: 'Mehnat kodeksi 2-modda',
-      lawDescription: ['mehnat', 'kodeksi', 'vazifa'],
+      lawDescription: ['vazifa'],
       fullLaw: "Ushbu Kodeksning asosiy vazifalari quyidagilardan iborat:\n"
           "- xodimlar mehnat huquqlari va erkinliklarining, shu jumladan mehnat qilishga, erkin ish tanlashga, adolatli va xavfsiz mehnat sharoitlariga hamda ishsizlikdan himoyalanishga bo‘lgan huquqining davlat kafolatlarini belgilash;\n"
           "- ish beruvchilarning kadrlarni tanlash, joy-joyiga qo‘yish va samarali mehnat jarayonini tashkil etish sohasidagi huquqlari amalga oshirilishini ta’minlash;\n"
@@ -12,7 +12,7 @@ List<LawModel> laws = [
           "- mehnat bozorining samarali faoliyat ko‘rsatishiga ko‘maklashish."),
   LawModel(
       lawName: 'Mehnat kodeksi 3-modda',
-      lawDescription: ['mehnat', 'kodeksi', 'prinsip'],
+      lawDescription: ['prinsip'],
       fullLaw:
           "Yakka tartibdagi mehnatga oid munosabatlarni va ular bilan bevosita bog‘liq bo‘lgan ijtimoiy munosabatlarni huquqiy jihatdan tartibga solishning asosiy prinsiplari quyidagilardan iborat:\n"
           "- mehnat huquqlarining tengligi, mehnat va mashg‘ulotlar sohasida kamsitishni taqiqlash;\n"
@@ -29,7 +29,7 @@ List<LawModel> laws = [
           "- uzaytirilgan ish vaqti – shartnoma yoki qonun asosida ruxsat berilgan ish vaqti."),
   LawModel(
       lawName: 'Mehnat kodeksi 5-modda',
-      lawDescription: ['mehnat', 'kodeksi', 'ta’til'],
+      lawDescription: ['ta’til'],
       fullLaw: "Xodimlarga quyidagi turdagi ta’tillar taqdim etiladi:\n"
           "- yillik mehnat ta’tili – belgilangan muddat davomida xodimning mehnat faoliyatidan ozod qilinishi;\n"
           "- o‘qish ta’tili – ta’lim olish bilan bog‘liq holda taqdim etiladigan ta’til;\n"
@@ -37,7 +37,7 @@ List<LawModel> laws = [
           "- ijtimoiy ta’tillar – maxsus holatlar uchun ajratiladigan ta’tillar."),
   LawModel(
       lawName: 'Mehnat kodeksi 6-modda',
-      lawDescription: ['mehnat', 'kodeksi', 'maosh'],
+      lawDescription: ['maosh'],
       fullLaw: "Ish haqi quyidagi tarkibiy qismlardan iborat bo‘ladi:\n"
           "- asosiy ish haqi – xodimning bajargan ishiga mutanosib ravishda to‘lanadigan haq;\n"
           "- qo‘shimcha haq – qo‘shimcha mehnat yoki maxsus sharoitlar uchun to‘lanadigan haq;\n"
@@ -53,7 +53,7 @@ List<LawModel> laws = [
           "- sog‘lig‘i yoki boshqa huquqiy sabablarga ko‘ra."),
   LawModel(
       lawName: 'Mehnat kodeksi 8-modda',
-      lawDescription: ['mehnat', 'kodeksi', 'himoya'],
+      lawDescription: ['himoya'],
       fullLaw:
           "Xodimlarning mehnat huquqlari quyidagilar orqali himoya qilinadi:\n"
           "- davlat nazorati va inspeksiyasi;\n"
@@ -62,7 +62,7 @@ List<LawModel> laws = [
           "- ish beruvchi va xodim o‘rtasidagi kelishuv mexanizmlari."),
   LawModel(
       lawName: 'Mehnat kodeksi 9-modda',
-      lawDescription: ['mehnat', 'kodeksi', 'majburiyat'],
+      lawDescription: ['majburiyat'],
       fullLaw: "Ish beruvchi quyidagi majburiyatlarni bajarishi lozim:\n"
           "- xavfsiz mehnat sharoitlarini yaratish;\n"
           "- xodimlarning huquqlarini hurmat qilish va himoya qilish;\n"
@@ -183,4 +183,91 @@ List<LawModel> laws = [
           "- Yozma ravishda tuzilishi lozim;\n"
           "- Xodimning huquqlari va majburiyatlari aniq belgilanishi kerak;\n"
           "- Ish beruvchi shartnoma shartlarini buzsa, xodim sudga murojaat qilishi mumkin."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 26-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'munosabatlar'],
+      fullLaw: "Yakka tartibdagi mehnatga oid munosabatlarning yuzaga kelishi\n"
+          "Xodim va ish beruvchi o‘rtasidagi yakka tartibdagi mehnatga oid munosabatlar ushbu Kodeksga muvofiq ular tomonidan tuziladigan mehnat shartnomasi asosida yuzaga keladi.\n"
+          "Qonunchilikda yoki mehnat haqidagi boshqa huquqiy hujjatlarda yoxud tashkilot ustavida (nizomida) belgilangan hollarda va tartibda yakka tartibdagi mehnatga oid munosabatlar mehnat shartnomasiga asosan quyidagilar natijasida yuzaga keladi:\n"
+          "- lavozimga saylanish yoki tegishli lavozimni egallash uchun tanlovdan o‘tish;\n"
+          "- lavozimga tayinlash yoki lavozimga tasdiqlash;\n"
+          "- vakolatli davlat organlari tomonidan ishga yuborish;\n"
+          "- O‘zbekiston Respublikasi hududida mehnat faoliyatiga bo‘lgan huquqqa doir tasdiqnoma berish;\n"
+          "- ota-onaning har ikkisining yoki ota-onadan birining (ota-onaning o‘rnini bosuvchi shaxsning) roziligi;\n"
+          "- ish beruvchining zimmasiga mehnat shartnomasini tuzish majburiyatini yuklatish to‘g‘risidagi sud qarorini qabul qilish;\n"
+          "- shaxsiy mehnatdan foydalanish bilan bog‘liq bo‘lgan va fuqarolik-huquqiy xususiyatga ega shartnoma asosida yuzaga kelgan munosabatlarni sud tomonidan yakka tartibdagi mehnatga oid munosabatlar deb e’tirof etish.\n"
+          "Mehnat shartnomasi tegishli tarzda rasmiylashtirilmagan taqdirda, xodim va ish beruvchi o‘rtasidagi yakka tartibdagi mehnatga oid munosabatlar ish beruvchining yoki uning shunga vakolatli bo‘lgan vakilining ijozati bilan yoki topshirig‘iga ko‘ra xodimga haqiqatda ishlashga ruxsat etilganligi asosida ham yuzaga keladi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 27-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'lavozim'],
+      fullLaw:
+          "Lavozimga saylanish yoki tegishli lavozimni egallash uchun tanlovdan o‘tish natijasida mehnat shartnomasi asosida yuzaga keladigan yakka tartibdagi mehnatga oid munosabatlar\n"
+          "Agar lavozimga saylanish xodimdan muayyan mehnat vazifasini bajarishni talab etsa, lavozimga saylanish natijasida mehnat shartnomasi asosidagi yakka tartibdagi mehnatga oid munosabatlar yuzaga keladi.\n"
+          "Agar mehnat to‘g‘risidagi qonunchilikda yoki mehnat haqidagi boshqa huquqiy hujjatlarda yoxud tashkilot ustavida (nizomida) tanlov bo‘yicha egallanishi lozim bo‘lgan lavozimlar ro‘yxati va ushbu lavozimlarga tanlov o‘tkazish tartibi belgilangan bo‘lsa, tegishli lavozimni egallash uchun tanlovdan o‘tish natijasida mehnat shartnomasi asosidagi yakka tartibdagi mehnatga oid munosabatlar yuzaga keladi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 28-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'lavozim'],
+      fullLaw:
+          "Lavozimga tayinlash yoki lavozimga tasdiqlash natijasida mehnat shartnomasi asosida yuzaga keladigan yakka tartibdagi mehnatga oid munosabatlar\n"
+          "Yakka tartibdagi mehnatga oid munosabatlar qonunchilikda va mehnat haqidagi boshqa huquqiy hujjatlarda yoki tashkilot ustavida (nizomida) nazarda tutilgan hollarda lavozimga tayinlash yoki lavozimga tasdiqlash natijasida mehnat shartnomasi asosida yuzaga keladi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 29-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'davlat organlari'],
+      fullLaw:
+          "Vakolatli davlat organlari tomonidan ishga yuborish munosabati bilan mehnat shartnomasi asosida yuzaga keladigan yakka tartibdagi mehnatga oid munosabatlar\n"
+          "Aholining ijtimoiy ehtiyojmand toifalaridan bo‘lgan shaxslarning yakka tartibdagi mehnatga oid munosabatlari mehnat shartnomasi asosida ularni mahalliy mehnat organining yo‘llanmasi bo‘yicha “Aholi bandligi to‘g‘risida”gi O‘zbekiston Respublikasi Qonunida belgilangan tartibda ishga joylashtirish natijasida yuzaga keladi.\n"
+          "Davlat grantlari bo‘yicha ta’lim olgan oliy ta’lim tashkilotlarining bitiruvchilari bilan yakka tartibdagi mehnatga oid munosabatlar ularni oliy ta’lim tashkilotining taqsimot komissiyasi tomonidan berilgan ishga yuborish yo‘llanmasi natijasida, mehnat shartnomasi asosida yuzaga keladi.\n"
+          "Muqobil xizmatga chaqirilgan fuqarolarning yakka tartibdagi mehnatga oid munosabatlari ularni tuman (shahar) mudofaa ishlari bo‘limining muqobil xizmatni o‘tash joyini tayinlash to‘g‘risidagi ko‘rsatmasiga asosan tashkilotlarga yuborilishi natijasida, mehnat shartnomasiga asosan yuzaga keladi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 30-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'tasdiqnoma'],
+      fullLaw:
+          "O‘zbekiston Respublikasi hududida mehnat faoliyati huquqiga doir tasdiqnoma mavjud bo‘lganda mehnat shartnomasi asosida yuzaga keladigan yakka tartibdagi mehnatga oid munosabatlar\n"
+          "Mehnat faoliyatini amalga oshirish uchun qonuniy ravishda O‘zbekiston Respublikasiga kelgan chet davlatlar fuqarolari va doimiy ravishda boshqa davlatlar hududida yashayotgan fuqaroligi bo‘lmagan shaxslar bilan yakka tartibdagi mehnatga oid munosabatlar vakolatli davlat organi bergan O‘zbekiston Respublikasi hududida mehnat faoliyati huquqiga doir tasdiqnoma olinganidan, shuningdek qonunchilikda nazarda tutilgan boshqa talablar bajarilganidan keyin tuziladigan mehnat shartnomasi asosida yuzaga keladi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 31-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'ota-ona roziligi'],
+      fullLaw:
+          "Ota-onadan birining (ota-onaning o‘rnini bosuvchi shaxsning) yozma roziligi mavjud bo‘lganda mehnat shartnomasi asosida yuzaga keladigan yakka tartibdagi mehnatga oid munosabatlar\n"
+          "O‘n beshdan o‘n olti yoshgacha shaxslar bilan yakka tartibdagi mehnatga oid munosabatlar ularni mazkur yoshga to‘lguniga qadar ishga qabul qilishga ushbu Kodeksga muvofiq yo‘l qo‘yiladigan hollarda ota-onadan birining (ota-onaning o‘rnini bosuvchi shaxsning) dastlabki yozma roziligi mavjud bo‘lganda mehnat shartnomasi asosida yuzaga keladi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 32-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'sud qarori'],
+      fullLaw:
+          "Ish beruvchining zimmasiga mehnat shartnomasini tuzish majburiyatini yuklatish to‘g‘risidagi sud qarori qabul qilinishi natijasida mehnat shartnomasi asosida yuzaga keladigan yakka tartibdagi mehnatga oid munosabatlar\n"
+          "Ish beruvchi tomonidan ishga qabul qilish qonunga xilof ravishda rad etilgan shaxslar bilan yakka tartibdagi mehnatga oid munosabatlar ish beruvchining zimmasiga mehnat shartnomasini tuzish majburiyatini yuklatish to‘g‘risidagi sud qarori qabul qilinishi natijasida tuzilgan mehnat shartnomasi asosida yuzaga keladi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 33-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'shaxsiy mehnat'],
+      fullLaw:
+          "Shaxsiy mehnatdan foydalanish bilan bog‘liq bo‘lgan va fuqarolik-huquqiy xususiyatga ega shartnoma asosida yuzaga kelgan munosabatlarni yakka tartibdagi mehnatga oid munosabatlar deb e’tirof etish\n"
+          "Jismoniy shaxs bilan ushbu Kodeks 11-moddasining ikkinchi qismida nazarda tutilgan munosabatlarni haqiqatdan tartibga soluvchi fuqarolik-huquqiy xususiyatga ega shartnomani tuzish ushbu munosabatlarning sud tomonidan yakka tartibdagi mehnatga oid munosabatlar deb e’tirof etilishiga sabab bo‘ladi. Bunday holda mehnat shartnomasi fuqarolik-huquqiy xususiyatga ega shartnoma tuzilgan kundan e’tiboran tuzilgan deb hisoblanadi, taraflarning munosabatlari esa shartnomada shartlashilgan ishni jismoniy shaxs tomonidan bajarish boshlangan kundan e’tiboran yakka tartibdagi mehnatga oid munosabatlar deb e’tirof etiladi.\n"
+          "Shaxsiy mehnatdan foydalanish bilan bog‘liq bo‘lgan va fuqarolik-huquqiy xususiyatga ega shartnoma asosida yuzaga kelgan munosabatlar tugatilgan taqdirda, ushbu munosabatlarini yakka tartibdagi mehnatga oid munosabatlar deb e’tirof etish sud tomonidan amalga oshiriladi. Mazkur shartnoma bo‘yicha ijrochi bo‘lgan jismoniy shaxs ushbu munosabatlarni yakka tartibdagi mehnatga oid munosabatlar deb e’tirof etish uchun yakka tartibdagi mehnat nizolarini ko‘rib chiqish uchun nazarda tutilgan tartibda va muddatlarda sudga murojaat qilishga haqlidir."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 34-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'ijtimoiy sheriklik'],
+      fullLaw:
+          "Mehnat sohasidagi ijtimoiy sheriklik tushunchasi va asosiy prinsiplari\n"
+          "Mehnat sohasidagi ijtimoiy sheriklik o‘z vakillari timsolida xodimlar, ish beruvchilar, ularning vakillari, davlat organlari o‘rtasidagi o‘zaro munosabatlar tizimi bo‘lib, bu tizim yakka tartibdagi mehnatga oid munosabatlarni hamda ular bilan bevosita bog‘liq bo‘lgan ijtimoiy munosabatlarni tartibga solish masalalari yuzasidan xodimlar, ish beruvchilar va davlat manfaatlarini muvofiqlashtirishni ta’minlashga qaratilgan bo‘ladi.\n"
+          "Mehnat sohasidagi ijtimoiy sheriklikning asosiy prinsiplari quyidagilardan iborat:\n"
+          "- taraflar va ularning vakillari tomonidan mehnat to‘g‘risidagi qonunchilikka hamda mehnat haqidagi boshqa huquqiy hujjatlarga rioya etish;\n"
+          "- taraflar vakillarining vakolatliligi;\n"
+          "- taraflarning teng huquqliligi;\n"
+          "- taraflar manfaatlarining hisobga olinishi;\n"
+          "- taraflarning shartnoma asosidagi munosabatlarda ishtirok etishdan manfaatdorligi;\n"
+          "- mehnat va mashg‘ulot sohasiga kiradigan masalalarni tanlash hamda muhokama qilish erkinligi;\n"
+          "- taraflar tomonidan majburiyatlarni o‘z zimmasiga olishning ixtiyoriyligi;\n"
+          "- taraflar o‘z zimmasiga olayotgan majburiyatlarning haqiqiyligi va ularni bajarishning majburiyligi;\n"
+          "- davlatning ijtimoiy sheriklikni mustahkamlash va rivojlantirishga ko‘maklashishi;\n"
+          "- qabul qilingan jamoa kelishuvlarining, jamoa shartnomasining, shuningdek ijtimoiy sheriklikning boshqa hujjatlarida ko‘rsatilgan qoidalarning bajarilishi ustidan nazorat;\n"
+          "- taraflarning, ular vakillarining o‘z aybi bilan jamoa kelishuvlari va jamoa shartnomasi bajarilmaganligi uchun javobgarligi."),
+  LawModel(
+      lawName: 'Mehnat kodeksi 35-modda',
+      lawDescription: ['mehnat', 'kodeksi', 'ijtimoiy sheriklik'],
+      fullLaw: "Mehnat sohasidagi ijtimoiy sheriklikning darajalari\n"
+          "Mehnat sohasidagi ijtimoiy sheriklik:\n"
+          "- boshlang‘ich darajada (tashkilotda yoki jismoniy shaxs bo‘lgan ish beruvchida);\n"
+          "- hududiy darajada;\n"
+          "- tarmoq darajasida;\n"
+          "- respublika darajasida amalga oshiriladi."),
 ];

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
+import 'package:men_fuqoro_ai/features/main/providers/message_provider.dart';
+import 'package:men_fuqoro_ai/features/main/widgets/messages.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
+import 'package:men_fuqoro_ai/features/utils/app_images.dart';
 import 'package:men_fuqoro_ai/features/utils/app_texts.dart';
+import 'package:provider/provider.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -13,43 +18,80 @@ class _ChatPageState extends State<ChatPage> {
   final TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back),
+    return Consumer<MessageProvider>(builder: (
+      context,
+      provider,
+      child,
+    ) {
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 30),
+              child: Image.asset(AppImages.main),
+            ),
+          ],
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back),
+          ),
         ),
-      ),
-      body: Column(
-        children: [],
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(left: 20, right: 20, bottom: 40),
-        child: SizedBox(
-          child: TextField(
-            controller: _controller,
-            decoration: InputDecoration(
-              hintText: AppTexts.typeMessage,
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: AppColors.gray,
+        body: Column(
+          children: [
+            Expanded(
+              child: Messages(),
+            )
+          ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.only(
+            left: 20,
+            right: 20,
+            bottom: 40,
+            top: 30,
+          ),
+          child: SizedBox(
+            child: TextField(
+              controller: _controller,
+              decoration: InputDecoration(
+                hintText: AppTexts.typeMessage,
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.gray,
+                  ),
                 ),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: AppColors.gray),
-              ),
-              suffixIcon: IconButton(
-                icon: Icon(Icons.send),
-                onPressed: () {},
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: AppColors.gray),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.send),
+                  onPressed: () async {
+                    List<LawModel> result = [];
+                    provider
+                        .sendResponse(text: _controller.text, isResponse: true)
+                        .then((_) {
+                      setState(() {
+                        result = provider.filterLaw(_controller.text);
+
+                        _controller.clear();
+                      });
+                      Future.delayed(Duration(seconds: 5));
+                      provider.sendAnswer(
+                        answer: result,
+                        isResponse: false,
+                      );
+                    });
+                  },
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

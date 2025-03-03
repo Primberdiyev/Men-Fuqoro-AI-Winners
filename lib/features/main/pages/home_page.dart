@@ -78,6 +78,20 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: AppColors.mainColor),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, RouteNames.chat);
+                },
+                child: Text(
+                  '+',
+                  style: AppTextStyles.body18W600
+                      .copyWith(color: AppColors.white, fontSize: 30),
+                ),
+              ),
+            ),
             TextButton(
               onPressed: () {},
               child: Text(
@@ -92,24 +106,23 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(top: 35),
-        child: FloatingActionButton(
-          backgroundColor: AppColors.mainColor,
-          shape: CircleBorder(),
-          onPressed: () {
-            Navigator.pushNamed(context, RouteNames.chat);
-          },
-          child: Text(
-            '+',
-            style: TextStyle(
-              color: AppColors.white,
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(top: 35),
+      //   child: FloatingActionButton(
+      //     backgroundColor: AppColors.mainColor,
+      //     shape: CircleBorder(),
+      //     onPressed: () {
+      //       Navigator.pushNamed(context, RouteNames.chat);
+      //     },
+      //     child: Text(
+      //       '+',
+      //       style: TextStyle(
+      //         color: AppColors.white,
+      //         fontSize: 25,
+      //         fontWeight: FontWeight.bold,
+      //       ),
+      //     ),
+      //   ),
     );
   }
 }

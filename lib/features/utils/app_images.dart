@@ -5,4 +5,5 @@ class AppImages {
   static const lawyer = 'assets/images/lawyer.png';
   static const tasks = 'assets/images/tasks.png';
   static const document = 'assets/images/document1.png';
+  static const main = 'assets/images/main.png';
 }
