@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/custom_home_button.dart';
+import 'package:men_fuqoro_ai/features/routes/route_names.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
 import 'package:men_fuqoro_ai/features/utils/app_images.dart';
 import 'package:men_fuqoro_ai/features/utils/app_text_styles.dart';
@@ -50,10 +51,14 @@ class HomePageTop extends StatelessWidget {
               CustomHomeButton(
                 iconPath: AppImages.lawyer,
                 text: AppTexts.introduceLawyer,
+                function: () {},
               ),
               CustomHomeButton(
                 iconPath: AppImages.tasks,
                 text: AppTexts.doTask,
+                function: () {
+                  Navigator.pushNamed(context, RouteNames.doTask);
+                },
               ),
             ],
           )

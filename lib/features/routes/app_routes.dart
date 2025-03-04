@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/features/introduction/intro_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/chat_page.dart';
+import 'package:men_fuqoro_ai/features/main/pages/do_task_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/home_page.dart';
 import 'package:men_fuqoro_ai/features/routes/route_names.dart';
 
@@ -17,6 +18,10 @@ Route generateRoute(RouteSettings settings) {
     case RouteNames.chat:
       return MaterialPageRoute(
         builder: (_) => ChatPage(),
+      );
+    case RouteNames.doTask:
+      return MaterialPageRoute(
+        builder: (_) => DoTaskPage(),
       );
   }
   return MaterialPageRoute(
