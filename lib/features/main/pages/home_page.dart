@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:men_fuqoro_ai/features/main/providers/message_provider.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/home_page_top.dart';
 import 'package:men_fuqoro_ai/features/routes/route_names.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
 import 'package:men_fuqoro_ai/features/utils/app_images.dart';
 import 'package:men_fuqoro_ai/features/utils/app_text_styles.dart';
 import 'package:men_fuqoro_ai/features/utils/app_texts.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -42,21 +44,27 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Image.asset(
-                    AppImages.document,
-                    height: 100,
-                    width: 100,
+          Consumer<MessageProvider>(builder: (
+            context,
+            provider,
+            child,
+          ) {
+            return Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: Image.asset(
+                      AppImages.document,
+                      height: 100,
+                      width: 100,
+                    ),
                   ),
-                ),
-                Text(AppTexts.historyEmpty)
-              ],
-            ),
-          ),
+                  Text(AppTexts.historyEmpty)
+                ],
+              ),
+            );
+          }),
         ],
       ),
       bottomNavigationBar: Padding(

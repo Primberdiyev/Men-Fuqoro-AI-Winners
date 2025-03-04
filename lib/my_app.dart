@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/features/introduction/intro_page.dart';
+import 'package:men_fuqoro_ai/features/main/providers/auth_provider.dart';
 import 'package:men_fuqoro_ai/features/main/providers/message_provider.dart';
 import 'package:men_fuqoro_ai/features/routes/app_routes.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
@@ -11,7 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => MessageProvider())],
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => MessageProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => AuthProvider(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: generateRoute,

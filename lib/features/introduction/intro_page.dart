@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/core/ui_kit/custom_button.dart';
 import 'package:men_fuqoro_ai/features/introduction/widgets/intro_item.dart';
+import 'package:men_fuqoro_ai/features/main/pages/auth_page.dart';
 import 'package:men_fuqoro_ai/features/routes/route_names.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
 import 'package:men_fuqoro_ai/features/utils/app_images.dart';
@@ -63,7 +64,8 @@ class IntroPage extends StatelessWidget {
         child: CustomButton(
           text: AppTexts.start,
           function: () {
-            Navigator.pushReplacementNamed(context, RouteNames.home);
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => AuthPage()));
           },
         ),
       ),

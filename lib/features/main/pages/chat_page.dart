@@ -40,11 +40,7 @@ class _ChatPageState extends State<ChatPage> {
           ),
         ),
         body: Column(
-          children: [
-            Expanded(
-              child: Messages(),
-            )
-          ],
+          children: [Messages()],
         ),
         bottomNavigationBar: Padding(
           padding: EdgeInsets.only(
@@ -76,7 +72,6 @@ class _ChatPageState extends State<ChatPage> {
                         .then((_) {
                       setState(() {
                         result = provider.filterLaw(_controller.text);
-
                         _controller.clear();
                       });
                       Future.delayed(Duration(seconds: 5));

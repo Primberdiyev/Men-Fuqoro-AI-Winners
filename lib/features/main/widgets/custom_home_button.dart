@@ -16,7 +16,7 @@ class CustomHomeButton extends StatelessWidget {
     return GestureDetector(
       onTap: function,
       child: Container(
-        width: 180,
+        width: 0.5 * (MediaQuery.of(context).size.width - 80),
         height: 50,
         margin: EdgeInsets.only(top: 20),
         decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class CustomHomeButton extends StatelessWidget {
               text,
               maxLines: 2,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: FontWeight.bold,
                 height: 1,
               ),

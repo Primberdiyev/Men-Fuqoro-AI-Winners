@@ -7,7 +7,6 @@ import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
 
 class MessageProvider extends ChangeNotifier {
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-
   Future<void> sendResponse(
       {required String text,
       required bool isResponse,
@@ -67,4 +66,5 @@ class MessageProvider extends ChangeNotifier {
     }
     return newLaws;
   }
+
 }

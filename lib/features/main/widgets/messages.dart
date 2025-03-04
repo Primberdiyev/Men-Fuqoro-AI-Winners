@@ -27,62 +27,67 @@ class Messages extends StatelessWidget {
 
         final messages = snapshot.data!.docs;
 
-        return ListView.builder(
-          reverse: true,
-          itemCount: messages.length,
-          itemBuilder: (context, index) {
-            final message = messages[messages.length - index - 1].data();
-
-            final bool isResponse = message['isResponse'] ?? false;
-
-            final bool hasAnswer =
-                message.containsKey('answer') && message['answer'] != null;
-
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-              child: Align(
-                alignment:
-                    isResponse ? Alignment.centerRight : Alignment.centerLeft,
-                child: InkWell(
-                  onTap: (!isResponse &&
-                          hasAnswer &&
-                          (message['answer'] as List).isNotEmpty)
-                      ? () {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return LowDialog(
-                                    title: message['answer'][0]['lawName'],
-                                    content: message['answer'][0]['fullLaw']);
-                              });
-                        }
-                      : null,
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: !isResponse
-                          ? Colors.grey.shade200
-                          : AppColors.mainColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Text(
-                      isResponse
-                          ? message['response']
-                          : (hasAnswer &&
-                                  (message['answer'] as List).isNotEmpty)
-                              ? message['answer'][0]['lawName']
-                              : "Iltimos so'rovingizni batafsil kiriting",
-                      style: TextStyle(
-                          fontSize: 18,
-                          color:
-                              isResponse ? AppColors.white : AppColors.black),
+        return Expanded(
+          child: ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            reverse: true,
+            itemCount: messages.length,
+            itemBuilder: (context, index) {
+              final message = messages[messages.length - index - 1].data();
+          
+              final bool isResponse = message['isResponse'] ?? false;
+          
+              final bool hasAnswer =
+                  message.containsKey('answer') && message['answer'] != null;
+          
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                child: Align(
+                  alignment:
+                      isResponse ? Alignment.centerRight : Alignment.centerLeft,
+                  child: InkWell(
+                    onTap: (!isResponse &&
+                            hasAnswer &&
+                            (message['answer'] as List).isNotEmpty)
+                        ? () {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return LowDialog(
+                                      title: message['answer'][0]['lawName'],
+                                      content: message['answer'][0]['fullLaw']);
+                                });
+                          }
+                        : null,
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: !isResponse
+                            ? Colors.grey.shade200
+                            : AppColors.mainColor,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        isResponse
+                            ? message['response']
+                            : (hasAnswer &&
+                                    (message['answer'] as List).isNotEmpty)
+                                ? message['answer'][0]['lawName']
+                                : "Iltimos so'rovingizni batafsil kiriting",
+                        style: TextStyle(
+                            fontSize: 18,
+                            color:
+                                isResponse ? AppColors.white : AppColors.black),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         );
       },
     );
