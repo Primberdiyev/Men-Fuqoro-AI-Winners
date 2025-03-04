@@ -6,24 +6,31 @@ import 'package:men_fuqoro_ai/features/main/laws/mehnat_kodeksi.dart';
 import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
 
 class MessageProvider extends ChangeNotifier {
+  bool _isLoading = false;
+  String userEmaill = '';
+  bool get isLoading => _isLoading;
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-  Future<void> sendResponse(
-      {required String text,
-      required bool isResponse,
-      LawModel? answer}) async {
+
+  Future<void> sendResponse({
+    required String text,
+    required bool isResponse,
+  }) async {
     try {
-      final time = DateTime.now().millisecondsSinceEpoch;
-      await firebaseFirestore.collection('responses').doc(time.toString()).set(
+      final time = DateTime.now().millisecondsSinceEpoch.toString();
+      await firebaseFirestore
+          .collection('users')
+          .doc(userEmaill)
+          .collection('responses')
+          .doc(time)
+          .set(
         {
           'response': text,
           'isResponse': isResponse,
         },
-        SetOptions(
-          merge: true,
-        ),
+        SetOptions(merge: true),
       );
     } catch (e) {
-      log('error on sending response to Firebase $e');
+      log('Error sending response to Firebase: $e');
     }
   }
 
@@ -32,23 +39,30 @@ class MessageProvider extends ChangeNotifier {
     required bool isResponse,
   }) async {
     try {
-      final time = DateTime.now().millisecondsSinceEpoch;
-      await firebaseFirestore.collection('responses').doc(time.toString()).set(
+      final time = DateTime.now().millisecondsSinceEpoch.toString();
+      await firebaseFirestore
+          .collection('users')
+          .doc(userEmaill)
+          .collection('responses')
+          .doc(time)
+          .set(
         {
           'answer': answer.map((e) => e.toJson()).toList(),
           'isResponse': isResponse,
         },
-        SetOptions(
-          merge: true,
-        ),
+        SetOptions(merge: true),
       );
     } catch (e) {
-      log('error on sending response to Firebase $e');
+      log('Error sending answer to Firebase: $e');
     }
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> getAllMessages() {
-    return firebaseFirestore.collection('responses').snapshots();
+    return firebaseFirestore
+        .collection('users')
+        .doc(userEmaill)
+        .collection('responses')
+        .snapshots();
   }
 
   List<LawModel> filterLaw(String text) {
@@ -67,4 +81,28 @@ class MessageProvider extends ChangeNotifier {
     return newLaws;
   }
 
+  Future<void> signUp({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      _isLoading = true;
+      userEmaill = email;
+      notifyListeners();
+
+      await firebaseFirestore.collection('users').doc(email).set({
+        'name': name,
+        'email': email,
+      });
+
+      _isLoading = false;
+      notifyListeners();
+    } catch (e) {
+      _isLoading = false;
+      log('Error on signing up: $e');
+      notifyListeners();
+      rethrow;
+    }
+  }
 }

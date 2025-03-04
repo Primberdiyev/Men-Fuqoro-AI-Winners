@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/features/main/providers/auth_provider.dart';
+import 'package:men_fuqoro_ai/features/main/providers/message_provider.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/custom_button.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/custom_text_field.dart';
 import 'package:men_fuqoro_ai/features/routes/route_names.dart';
@@ -52,7 +53,7 @@ class _AuthPageState extends State<AuthPage> {
             SizedBox(
               height: 50,
             ),
-            Consumer<AuthProvider>(
+            Consumer<MessageProvider>(
               builder: (
                 context,
                 provider,
