@@ -8,6 +8,7 @@ class LowDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      backgroundColor: Colors.white,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

@@ -51,7 +51,9 @@ class HomePageTop extends StatelessWidget {
               CustomHomeButton(
                 iconPath: AppImages.lawyer,
                 text: AppTexts.introduceLawyer,
-                function: () {},
+                function: () {
+                  Navigator.pushNamed(context, RouteNames.lawyers);
+                },
               ),
               CustomHomeButton(
                 iconPath: AppImages.tasks,

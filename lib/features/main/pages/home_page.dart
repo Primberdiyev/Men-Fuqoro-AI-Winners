@@ -93,7 +93,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, RouteNames.rating);
+              },
               child: Text(
                 AppTexts.rate,
                 style: AppTextStyles.body18W600.copyWith(
@@ -106,23 +108,6 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: Padding(
-      //   padding: const EdgeInsets.only(top: 35),
-      //   child: FloatingActionButton(
-      //     backgroundColor: AppColors.mainColor,
-      //     shape: CircleBorder(),
-      //     onPressed: () {
-      //       Navigator.pushNamed(context, RouteNames.chat);
-      //     },
-      //     child: Text(
-      //       '+',
-      //       style: TextStyle(
-      //         color: AppColors.white,
-      //         fontSize: 25,
-      //         fontWeight: FontWeight.bold,
-      //       ),
-      //     ),
-      //   ),
     );
   }
 }

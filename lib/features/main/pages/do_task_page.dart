@@ -6,6 +6,7 @@ class DoTaskPage extends StatefulWidget {
   const DoTaskPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _DoTaskPageState createState() => _DoTaskPageState();
 }
 
@@ -22,9 +23,7 @@ class _DoTaskPageState extends State<DoTaskPage> {
   }
 
   void _selectRandomQuestions() {
-    // Savollarni aralashtirish
     questions.shuffle();
-    // Faqat 5 ta savolni tanlash
     selectedQuestions = questions.take(5).toList();
   }
 
@@ -55,15 +54,25 @@ class _DoTaskPageState extends State<DoTaskPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
+          backgroundColor: Colors.white,
           title: Text(isCorrect ? "To'g'ri!" : "Noto'g'ri!"),
-          content: Text(isCorrect
-              ? "Ajoyib, siz to'g'ri javob berdingiz!"
-              : "Afsuski, javob noto'g'ri. To'g'ri javob: ${selectedQuestions[currentQuestionIndex].correctAnswer}"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              isCorrect
+                  ? Icon(Icons.check_circle, color: Colors.green, size: 60)
+                  : Icon(Icons.cancel, color: Colors.red, size: 60),
+              SizedBox(height: 10),
+              Text(isCorrect
+                  ? "Ajoyib, siz to'g'ri javob berdingiz!"
+                  : "Afsuski, javob noto'g'ri. To'g'ri javob: ${selectedQuestions[currentQuestionIndex].correctAnswer}"),
+            ],
+          ),
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Dialogni yopish
-                nextQuestion(); // Keyingi savolga o'tish
+                Navigator.of(context).pop();
+                nextQuestion();
               },
               child: Text("Keyingi Savol"),
             ),
@@ -88,7 +97,7 @@ class _DoTaskPageState extends State<DoTaskPage> {
                 setState(() {
                   currentQuestionIndex = 0;
                   score = 0;
-                  _selectRandomQuestions(); // Yangi savollarni tanlash
+                  _selectRandomQuestions();
                 });
               },
               child: Text("Qayta Boshlash"),
