@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:men_fuqoro_ai/features/introduction/intro_page.dart';
-import 'package:men_fuqoro_ai/features/main/providers/auth_provider.dart';
 import 'package:men_fuqoro_ai/features/main/providers/message_provider.dart';
 import 'package:men_fuqoro_ai/features/routes/app_routes.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
+import 'package:men_fuqoro_ai/splash_page.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: generateRoute,
         theme: ThemeData(scaffoldBackgroundColor: AppColors.white),
-        home: IntroPage(),
+        home: SplashPage(),
       ),
     );
   }

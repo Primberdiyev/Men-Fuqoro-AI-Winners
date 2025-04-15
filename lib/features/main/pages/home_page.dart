@@ -8,8 +8,21 @@ import 'package:men_fuqoro_ai/features/utils/app_text_styles.dart';
 import 'package:men_fuqoro_ai/features/utils/app_texts.dart';
 import 'package:provider/provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      context.read<MessageProvider>().getUserModel();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

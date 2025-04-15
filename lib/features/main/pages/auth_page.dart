@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:men_fuqoro_ai/features/main/providers/auth_provider.dart';
+import 'package:men_fuqoro_ai/core/services/hive_services.dart';
+import 'package:men_fuqoro_ai/features/main/models/user_model.dart';
 import 'package:men_fuqoro_ai/features/main/providers/message_provider.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/custom_button.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/custom_text_field.dart';
@@ -68,6 +69,15 @@ class _AuthPageState extends State<AuthPage> {
                   buttonText: "Davom etish",
                   function: () async {
                     try {
+                      final UserModel userModel = UserModel(
+                          email: nameController.text,
+                          name: nameController.text,
+                          surname: passwordController.text,
+                          address: '',
+                          imageAsset: '',
+                          joinDate: '',
+                          score: 0);
+
                       provider
                           .signUp(
                               name: nameController.text,
@@ -75,6 +85,7 @@ class _AuthPageState extends State<AuthPage> {
                               password: passwordController.text)
                           .then((_) {
                         if (context.mounted) {
+                          HiveServices().saveUser(userModel);
                           Navigator.pushReplacementNamed(
                               context, RouteNames.home);
                         }

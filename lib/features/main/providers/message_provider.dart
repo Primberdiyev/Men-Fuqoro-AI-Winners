@@ -2,15 +2,16 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:men_fuqoro_ai/core/services/hive_services.dart';
 import 'package:men_fuqoro_ai/features/main/laws/mehnat_kodeksi.dart';
 import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
+import 'package:men_fuqoro_ai/features/main/models/user_model.dart';
 
 class MessageProvider extends ChangeNotifier {
   bool _isLoading = false;
-  String userEmaill = '';
   bool get isLoading => _isLoading;
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-
+  UserModel? userModel;
   Future<void> sendResponse({
     required String text,
     required bool isResponse,
@@ -19,7 +20,7 @@ class MessageProvider extends ChangeNotifier {
       final time = DateTime.now().millisecondsSinceEpoch.toString();
       await firebaseFirestore
           .collection('users')
-          .doc(userEmaill)
+          .doc(userModel?.email)
           .collection('responses')
           .doc(time)
           .set(
@@ -42,7 +43,7 @@ class MessageProvider extends ChangeNotifier {
       final time = DateTime.now().millisecondsSinceEpoch.toString();
       await firebaseFirestore
           .collection('users')
-          .doc(userEmaill)
+          .doc(userModel?.email)
           .collection('responses')
           .doc(time)
           .set(
@@ -60,7 +61,7 @@ class MessageProvider extends ChangeNotifier {
   Stream<QuerySnapshot<Map<String, dynamic>>> getAllMessages() {
     return firebaseFirestore
         .collection('users')
-        .doc(userEmaill)
+        .doc(userModel?.email)
         .collection('responses')
         .snapshots();
   }
@@ -88,7 +89,6 @@ class MessageProvider extends ChangeNotifier {
   }) async {
     try {
       _isLoading = true;
-      userEmaill = email;
       notifyListeners();
 
       await firebaseFirestore.collection('users').doc(email).set({
@@ -104,5 +104,10 @@ class MessageProvider extends ChangeNotifier {
       notifyListeners();
       rethrow;
     }
+  }
+
+  void getUserModel() {
+    userModel = HiveServices().getUser();
+    notifyListeners();
   }
 }

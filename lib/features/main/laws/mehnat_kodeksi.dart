@@ -22,7 +22,7 @@ List<LawModel> laws = [
           "- xodimning huquqiy holati yomonlashishiga yo‘l qo‘yilmasligi."),
   LawModel(
       lawName: 'Mehnat kodeksi 4-modda',
-      lawDescription: ['mehnat', 'kodeksi', 'ish vaqti'],
+      lawDescription: [ 'ish vaqti'],
       fullLaw: "Ish vaqti quyidagi turlarga bo‘linadi:\n"
           "- normal ish vaqti – haftasiga 40 soatdan oshmaydigan ish vaqti;\n"
           "- qisqartirilgan ish vaqti – ayrim toifadagi xodimlar uchun belgilangan ish vaqti;\n"
