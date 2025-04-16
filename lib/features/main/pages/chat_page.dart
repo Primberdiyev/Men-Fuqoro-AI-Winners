@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:men_fuqoro_ai/features/main/laws/full_laws.dart';
 import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
 import 'package:men_fuqoro_ai/features/main/providers/message_provider.dart';
+import 'package:men_fuqoro_ai/features/main/services/law_service.dart';
 import 'package:men_fuqoro_ai/features/main/widgets/messages.dart';
 import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
 import 'package:men_fuqoro_ai/features/utils/app_images.dart';
@@ -40,7 +42,9 @@ class _ChatPageState extends State<ChatPage> {
           ),
         ),
         body: Column(
-          children: [Messages()],
+          children: [
+            Messages(),
+          ],
         ),
         bottomNavigationBar: Padding(
           padding: EdgeInsets.only(
@@ -69,17 +73,39 @@ class _ChatPageState extends State<ChatPage> {
                     List<LawModel> result = [];
                     provider
                         .sendResponse(text: _controller.text, isResponse: true)
-                        .then((_) {
-                      setState(() {
+                        .then(
+                      (_) {
                         result = provider.filterLaw(_controller.text);
+
+                        if (result.isEmpty) {
+                          final String lawName =
+                              QonunService.topModda(_controller.text) ?? "";
+
+                          final law = fullLaw.firstWhere(
+                            (e) =>
+                                e.lawName
+                                    .toString()
+                                    .toLowerCase()
+                                    .replaceAll(' ', '') ==
+                                lawName.replaceAll(' ', ''),
+                            orElse: () => LawModel(
+                              lawName: '',
+                              fullLaw: '',
+                              lawDescription: [],
+                            ),
+                          );
+                          result.add(law);
+                        }
                         _controller.clear();
-                      });
-                      Future.delayed(Duration(seconds: 5));
-                      provider.sendAnswer(
-                        answer: result,
-                        isResponse: false,
-                      );
-                    });
+                        // });
+                        Future.delayed(Duration(seconds: 5));
+                        provider.sendAnswer(
+                          answer: result,
+                          isResponse: false,
+                        );
+                      },
+                    );
+                    print('');
                   },
                 ),
               ),

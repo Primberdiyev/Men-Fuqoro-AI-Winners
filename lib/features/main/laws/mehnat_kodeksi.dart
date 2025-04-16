@@ -1,6 +1,19 @@
 import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
 
-List<LawModel> laws = [
+List<LawModel> lawsMehnat = [
+  LawModel(
+      lawName: 'Mehnat kodeksi 1-modda',
+      lawDescription: [
+        'xodimlar',
+        'ish beruvchilar',
+        'davlat manfaatlari',
+        'yakka tartibdagi mehnat munosabatlari',
+        'ijtimoiy munosabatlar'
+      ],
+      fullLaw:
+          "Mehnat kodeksi, 1-modda — Ushbu Kodeks bilan tartibga solinadigan munosabatlar\n\n"
+          "Ushbu Kodeks xodimlar, ish beruvchilar va davlat manfaatlarining muvozanatini ta’minlash hamda ularni muvofiqlashtirish asosida yakka tartibdagi mehnatga oid munosabatlarni "
+          "va ular bilan bevosita bog‘liq bo‘lgan ijtimoiy munosabatlarni tartibga soladi."),
   LawModel(
       lawName: 'Mehnat kodeksi 2-modda',
       lawDescription: ['vazifa'],
@@ -22,7 +35,7 @@ List<LawModel> laws = [
           "- xodimning huquqiy holati yomonlashishiga yo‘l qo‘yilmasligi."),
   LawModel(
       lawName: 'Mehnat kodeksi 4-modda',
-      lawDescription: [ 'ish vaqti'],
+      lawDescription: ['ish vaqti'],
       fullLaw: "Ish vaqti quyidagi turlarga bo‘linadi:\n"
           "- normal ish vaqti – haftasiga 40 soatdan oshmaydigan ish vaqti;\n"
           "- qisqartirilgan ish vaqti – ayrim toifadagi xodimlar uchun belgilangan ish vaqti;\n"

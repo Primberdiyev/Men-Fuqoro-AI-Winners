@@ -36,14 +36,15 @@ class Messages extends StatelessWidget {
             itemCount: messages.length,
             itemBuilder: (context, index) {
               final message = messages[messages.length - index - 1].data();
-          
+
               final bool isResponse = message['isResponse'] ?? false;
-          
+
               final bool hasAnswer =
                   message.containsKey('answer') && message['answer'] != null;
-          
+
               return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                 child: Align(
                   alignment:
                       isResponse ? Alignment.centerRight : Alignment.centerLeft,

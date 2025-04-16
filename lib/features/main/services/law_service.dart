@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/services.dart';
 import 'package:men_fuqoro_ai/features/main/models/question_answer_model.dart';
 import 'package:string_similarity/string_similarity.dart';
@@ -9,18 +11,26 @@ class QonunService {
     final data = await rootBundle.loadString('assets/mehnat_qonuni.csv');
     final lines = data.split('\n');
 
-    _savollar =
-        lines.skip(1).where((line) => line.trim().isNotEmpty).map((line) {
-      final parts = _parseCsvLine(line);
+    // _savollar =
+    //     lines.skip(1).where((line) => line.trim().isNotEmpty).map((line) {
+    //   final parts = _parseCsvLine(line);
+    //   if (parts.length >= 3) {
+    //     return QonunSavol(
+    //       savol: parts[0],
+    //       qaysiModda: parts[1],
+    //     );
+    //   } else {
+    //     return QonunSavol(qaysiModda: '', savol: '');
+    //   }
+    // }).toList();
+    for (int i = 1; i < lines.length; i++) {
+      final parts = _parseCsvLine(lines[i]);
       if (parts.length >= 3) {
-        return QonunSavol(
-          savol: parts[0],
-          qaysiModda: parts[1],
-        );
-      } else {
-        return QonunSavol(qaysiModda: '', savol: '');
+        _savollar.add(QonunSavol(savol: parts[0], qaysiModda: parts[1]));
       }
-    }).toList();
+    }
+    final test = _savollar;
+    print('size  ${test.length}');
   }
 
   static List<String> _parseCsvLine(String line) {
@@ -28,6 +38,8 @@ class QonunService {
   }
 
   static String? topModda(String input) {
+    final test = _savollar;
+    log("test ${test.length.toString()}");
     if (_savollar.isEmpty) {
       throw Exception(
           "Qonun savollari yuklanmagan. Avval initialize() ni chaqiring.");

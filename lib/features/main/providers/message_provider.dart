@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/core/services/hive_services.dart';
+import 'package:men_fuqoro_ai/features/main/laws/jinoyat_kodeksi.dart';
 import 'package:men_fuqoro_ai/features/main/laws/mehnat_kodeksi.dart';
 import 'package:men_fuqoro_ai/features/main/models/law_model.dart';
 import 'package:men_fuqoro_ai/features/main/models/user_model.dart';
@@ -68,7 +69,8 @@ class MessageProvider extends ChangeNotifier {
 
   List<LawModel> filterLaw(String text) {
     List<LawModel> newLaws = [];
-    for (var law in laws) {
+    final listOfLaws = lawsMehnat + lawsCrime;
+    for (var law in listOfLaws) {
       int count = 0;
       for (var l in law.lawDescription) {
         if (!text.contains(l)) {
