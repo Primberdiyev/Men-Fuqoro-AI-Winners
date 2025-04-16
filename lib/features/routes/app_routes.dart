@@ -25,13 +25,13 @@ Route generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (_) => DoTaskPage(),
       );
-    case RouteNames.lawyers:
-      return MaterialPageRoute(
-        builder: (_) => LawyerListPage(),
-      );
     case RouteNames.rating:
       return MaterialPageRoute(
         builder: (_) => RatingPage(),
+      );
+    case RouteNames.lawyers:
+      return MaterialPageRoute(
+        builder: (_) => LawyerListPage(),
       );
   }
   return MaterialPageRoute(
