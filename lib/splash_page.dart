@@ -26,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
     final hiveService = HiveServices().getUser();
     if (hiveService != null) {
       if (context.mounted) {
-        Navigator.pushReplacementNamed(context, RouteNames.home);
+        Navigator.pushReplacementNamed(context, RouteNames.intro);
       }
     } else {
       if (context.mounted) {
