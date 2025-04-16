@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                   shape: BoxShape.circle, color: AppColors.mainColor),
               child: TextButton(
                 onPressed: () {
-                //  Navigator.pushNamed(context, RouteNames.chat);
+                    Navigator.pushNamed(context, RouteNames.chat);
                 },
                 child: Text(
                   '+',
