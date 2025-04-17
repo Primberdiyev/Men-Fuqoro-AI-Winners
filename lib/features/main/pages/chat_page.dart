@@ -97,7 +97,7 @@ class _ChatPageState extends State<ChatPage> {
                           result.add(law);
                         }
                         _controller.clear();
-                        // });
+                      
                         Future.delayed(Duration(seconds: 5));
                         provider.sendAnswer(
                           answer: result,

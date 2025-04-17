@@ -6,4 +6,5 @@ class RouteNames {
   static const rating = '/rating';
   static const sud = '/sud';
   static const lawyers = '/lawyers';
+  static const attendSud = 'attendsud';
 }

@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, RouteNames.sud);
+                Navigator.pushNamed(context, RouteNames.attendSud);
               },
               child: Text(
                 AppTexts.sud,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:men_fuqoro_ai/features/introduction/intro_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/advokatlar_page.dart';
+import 'package:men_fuqoro_ai/features/main/pages/attend_sud.dart';
 import 'package:men_fuqoro_ai/features/main/pages/chat_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/do_task_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/home_page.dart';
@@ -36,6 +37,8 @@ Route generateRoute(RouteSettings settings) {
       );
     case RouteNames.sud:
       return MaterialPageRoute(builder: (_) => SudPage());
+    case RouteNames.attendSud:
+      return MaterialPageRoute(builder: (_) => AttendSud());
   }
   return MaterialPageRoute(
     builder: (_) => IntroPage(),
