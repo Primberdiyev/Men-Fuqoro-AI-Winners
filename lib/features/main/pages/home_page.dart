@@ -87,24 +87,29 @@ class _HomePageState extends State<HomePage> {
           right: 30,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, RouteNames.sud);
+              },
               child: Text(
-                AppTexts.home,
+                AppTexts.sud,
                 style: AppTextStyles.body18W600.copyWith(
                   color: AppColors.black,
                   fontSize: 20,
                 ),
               ),
             ),
+            SizedBox(
+              width: 30,
+            ),
             Container(
               decoration: BoxDecoration(
                   shape: BoxShape.circle, color: AppColors.mainColor),
               child: TextButton(
                 onPressed: () {
-                    Navigator.pushNamed(context, RouteNames.chat);
+                  Navigator.pushNamed(context, RouteNames.chat);
                 },
                 child: Text(
                   '+',
@@ -113,6 +118,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            Spacer(),
             TextButton(
               onPressed: () {
                 Navigator.pushNamed(context, RouteNames.rating);

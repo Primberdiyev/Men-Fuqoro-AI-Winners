@@ -6,4 +6,6 @@ class AppImages {
   static const tasks = 'assets/images/tasks.png';
   static const document = 'assets/images/document1.png';
   static const main = 'assets/images/main.png';
+  static const courtroom = 'assets/images/courtroom.png';
+  static const microphone = 'assets/images/microphone.png';
 }

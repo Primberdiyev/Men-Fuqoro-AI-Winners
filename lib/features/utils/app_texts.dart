@@ -14,6 +14,7 @@ class AppTexts {
   static const menFuqoroAI = 'Men Fuqoro AI';
   static const typeMessage = 'So\'rov matnini kiriting';
   static const home = 'Home';
+  static const sud = 'Online sud';
   static const introduceLawyer = 'Advokatlar\nhaqida';
   static const doTask = 'Mashq\nbajarish';
   static const rate = 'Reyting';

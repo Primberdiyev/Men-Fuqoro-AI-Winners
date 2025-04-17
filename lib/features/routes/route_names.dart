@@ -4,6 +4,6 @@ class RouteNames {
   static const chat = '/chat';
   static const doTask = 'doTask';
   static const rating = '/rating';
-
+  static const sud = '/sud';
   static const lawyers = '/lawyers';
 }

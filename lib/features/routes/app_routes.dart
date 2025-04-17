@@ -5,6 +5,7 @@ import 'package:men_fuqoro_ai/features/main/pages/chat_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/do_task_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/home_page.dart';
 import 'package:men_fuqoro_ai/features/main/pages/rating_page.dart';
+import 'package:men_fuqoro_ai/features/main/pages/sud_page.dart';
 import 'package:men_fuqoro_ai/features/routes/route_names.dart';
 
 Route generateRoute(RouteSettings settings) {
@@ -33,6 +34,8 @@ Route generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (_) => LawyerListPage(),
       );
+    case RouteNames.sud:
+      return MaterialPageRoute(builder: (_) => SudPage());
   }
   return MaterialPageRoute(
     builder: (_) => IntroPage(),
