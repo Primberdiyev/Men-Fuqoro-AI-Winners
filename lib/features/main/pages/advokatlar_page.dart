@@ -9,7 +9,7 @@ class LawyerListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Advokatlar Ro'yxati"),
+        title: Text("Advokatlar RO'yhati"),
         backgroundColor: Colors.transparent,
       ),
       body: ListView.builder(

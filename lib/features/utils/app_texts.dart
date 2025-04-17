@@ -20,6 +20,7 @@ class AppTexts {
   static const rate = 'Reyting';
   static const history = 'Avval qidirilgan qonunlar';
   static const historyEmpty = 'Qonunlar topilmadi';
+  static const apiKey = "'http://localhost:5000/qonun";
   static const analyzer =
       "Bizning ilovamiz murakkab ish tafsilotlarini tahlil qiladi, uzun hujjatlarni qisqartirib beradi, muhim voqealarni aniqlaydi va bir necha soniyalar ichida  asosiy huquqiy xulosalarni ta’kidlaydi";
 }

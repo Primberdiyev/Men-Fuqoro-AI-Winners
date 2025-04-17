@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:men_fuqoro_ai/features/routes/route_names.dart';
-import 'package:men_fuqoro_ai/features/utils/app_colors.dart';
 import 'package:men_fuqoro_ai/features/utils/app_images.dart';
 
 class SudPage extends StatelessWidget {
